@@ -22,12 +22,13 @@ $('#box2').on('click', function(){
 $('.box').on('click', function(){
   $('h1').text('jQuery Ninja');
 });
+  //$('header').find('h1').html('jQuery Ninja');
 
 // 5. When the #box1 is clicked:
 	// Update the src attribute for the image with the class .moto to "images/moto.jpg"
 	// Hint: look up the attr method if you get stuck!
 $('#box1').on('click', function(){
-  $('img').attr('src', 'images/moto.jpg');
+  $(".moto").attr('src', 'images/moto.jpg');
 });
 
 /**
@@ -64,7 +65,7 @@ $('#answer2').hide();
 $('#question2').on('click', function(){
   $('#answer2').slideDown();
   $('#answer1').slideUp();
-  $('li').removeClass();
+  $('li').removeClass('active');
   $('#question2').addClass('active');
 });
 
@@ -76,7 +77,7 @@ $('#question2').on('click', function(){
 $('#question1').on('click', function(){
   $('#answer1').slideDown();
   $('#answer2').slideUp();
-  $('li').removeClass();
+  $('li').removeClass('active');
   $('#question1').addClass('active');
 });
 
@@ -94,9 +95,11 @@ $('#question1').on('click', function(){
 // 1. When the button "Show Only Yellow" is clicked, only show circles with the class .yellow
 $('#showYellowCircles').on('click', function(){
   $('.blue').hide();
+  $('.yellow').fadeIN();
 });
 
 // 2. When the button "Show Only Blue" is clicked, only show circles with the class .blue
 $('#showBlueCircles').on('click', function(){
   $('.yellow').hide();
-})
+  $('.blue').fadeIn();
+});
